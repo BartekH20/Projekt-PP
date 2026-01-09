@@ -1,5 +1,16 @@
 # depslib dependency file v1.0
-1767901917 source:c:\users\barte\documents\github\projekt-pp\projekt-pp\main.c
+1767986416 source:c:\users\barte\documents\github\projekt-pp\projekt-pp\main.c
+	<stdio.h>
+	"wynalazek.h"
+
+1767986416 c:\users\barte\documents\github\projekt-pp\projekt-pp\wynalazek.h
+
+1767986416 source:c:\users\barte\documents\github\projekt-pp\projekt-pp\menu.c
+	<stdio.h>
+
+1767987034 source:c:\users\barte\documents\github\projekt-pp\projekt-pp\wynalazek.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	"wynalazek.h"
 
