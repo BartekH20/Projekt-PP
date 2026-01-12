@@ -25,5 +25,9 @@ Wynalazek* usun(Wynalazek *lista);
 void wyszukaj(Wynalazek *lista);
 void zwolnij(Wynalazek *lista);
 const char* status_str(Status s);
+Wynalazek* sortuj_nazwa(Wynalazek *lista);
+Wynalazek* sortuj_niezawodnosc(Wynalazek *lista);
+
+
 
 #endif

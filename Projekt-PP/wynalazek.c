@@ -133,3 +133,36 @@ void zwolnij(Wynalazek *lista) {
         free(tmp);
     }
 }
+Wynalazek* sortuj_nazwa(Wynalazek *lista) {
+    Wynalazek *sorted=NULL;
+    while (lista) {
+        Wynalazek *x=lista;
+        lista=lista->next;
+        if (!sorted || strcmp(x->nazwa,sorted->nazwa)<0) {
+            x->next=sorted; sorted=x;
+        } else {
+            Wynalazek *p=sorted;
+            while (p->next && strcmp(p->next->nazwa,x->nazwa)<0)
+                p=p->next;
+            x->next=p->next; p->next=x;
+        }
+    }
+    return sorted;
+}
+
+Wynalazek* sortuj_niezawodnosc(Wynalazek *lista) {
+    Wynalazek *sorted=NULL;
+    while (lista) {
+        Wynalazek *x=lista;
+        lista=lista->next;
+        if (!sorted || x->niezawodnosc>sorted->niezawodnosc) {
+            x->next=sorted; sorted=x;
+        } else {
+            Wynalazek *p=sorted;
+            while (p->next && p->next->niezawodnosc>x->niezawodnosc)
+                p=p->next;
+            x->next=p->next; p->next=x;
+        }
+    }
+    return sorted;
+}

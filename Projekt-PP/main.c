@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "wynalazek.h"
+#include "plik.h"
 
 void menu();
 
@@ -16,6 +17,8 @@ int main() {
             case 3: lista=usun(lista); break;
             case 4: wyswietl(lista); break;
             case 5: wyszukaj(lista); break;
+            case 6: lista = sortuj_nazwa(lista); break;
+            case 7: lista = sortuj_niezawodnosc(lista); break;
         }
     } while (x!=0);
     zwolnij(lista);
