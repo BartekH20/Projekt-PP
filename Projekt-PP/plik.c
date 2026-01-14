@@ -8,7 +8,9 @@ void zapisz(Wynalazek *lista, const char *nazwa) {
     for (;lista;lista=lista->next)
         fwrite(lista,sizeof(Wynalazek)-sizeof(Wynalazek*),1,f);
     fclose(f);
+    printf("===Zapisano pomyslnie!=== \n");
 }
+
 
 Wynalazek* wczytaj(const char *nazwa) {
     FILE *f=fopen(nazwa,"rb");
@@ -22,5 +24,7 @@ Wynalazek* wczytaj(const char *nazwa) {
         x->next=lista; lista=x;
     }
     fclose(f);
+    printf("===Wczytano pomyslnie!=== \n");
     return lista;
+
 }

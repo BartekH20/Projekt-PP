@@ -76,7 +76,7 @@ Wynalazek* edytuj(Wynalazek *lista) {
             p->status = wczytaj_status();
             return lista;
         }
-    printf("Nie znaleziono!\n");
+    printf("===Nie znaleziono!===\n");
     return lista;
 }
 
@@ -90,17 +90,18 @@ Wynalazek* usun(Wynalazek *lista) {
     while (p) {
         if (!strcmp(p->nazwa,nazwa)) {
             if (p->status==ZAKAZANY || p->status==NIESTABILNY) {
-                printf("Nie mozna usunac!\n");
+                printf("===Nie mozna usunac!===\n");
                 return lista;
             }
             if (prev) prev->next=p->next;
             else lista=p->next;
             free(p);
+            printf("===Usunieto pomyslnie!===");
             return lista;
         }
         prev=p; p=p->next;
     }
-    printf("Nie znaleziono!\n");
+    printf("===Nie znaleziono!===\n");
     return lista;
 }
 
@@ -123,7 +124,7 @@ void wyszukaj(Wynalazek *lista) {
     }
 
     if (!znaleziono)
-        printf("Nie znaleziono wynalazku o nazwie \"%s\".\n", szukana);
+        printf("===Nie znaleziono wynalazku o nazwie \"%s\".===\n", szukana);
 }
 
 void zwolnij(Wynalazek *lista) {
@@ -147,6 +148,7 @@ Wynalazek* sortuj_nazwa(Wynalazek *lista) {
             x->next=p->next; p->next=x;
         }
     }
+    printf("===Posortowano alfabetycznie!===\n");
     return sorted;
 }
 
@@ -164,5 +166,6 @@ Wynalazek* sortuj_niezawodnosc(Wynalazek *lista) {
             x->next=p->next; p->next=x;
         }
     }
+    printf("===Posortowano wg najwiekszej niezawodnosci!===\n");
     return sorted;
 }
